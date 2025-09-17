@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1a1a1a;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    transition: background-color 0.5s ease;
+}
+
+.brand-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.cta-button {
+    position: relative;
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+.cta-button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    animation: evolvePulse 1s forwards;
+}
+
+@keyframes evolvePulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    transition: background-color 0.5s ease;
+}
+
+.about-section {
+    background-color: #e6e6e6;
+    color: #1a1a1a;
+}
+
+.coming-soon-section {
+    background-color: #d1d1d1;
+    color: #1a1a1a;
+}
+
+.contact-section {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.contact-info a:hover {
+    opacity: 0.8;
+}
