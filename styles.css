@@ -18,7 +18,7 @@ body {
 }
 
 .brand-logo {
-    width: 150px;
+    width: 250px;
     height: auto;
     margin-bottom: 1.5rem;
 }
@@ -91,6 +91,27 @@ p {
 .about-section {
     background-color: #e6e6e6;
     color: #1a1a1a;
+    position: relative; /* This is crucial for positioning the circle */
+    overflow: hidden; /* This hides the circle until it animates into view */
+}
+
+.circle-animation {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: rgba(239, 235, 235, 0.882); /* A light, semi-transparent circle */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scaleIn 2s forwards; /* The animation that runs once the element is visible */
+    z-index: -1; /* Puts the circle behind the text */
+}
+
+@keyframes scaleIn {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 .coming-soon-section {
